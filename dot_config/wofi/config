@@ -1,0 +1,5 @@
+width = 700 
+allow_images = true
+image_size = 20
+termi = kitty
+prompt = Que loco iih
