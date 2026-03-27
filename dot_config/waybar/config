@@ -1,4 +1,3 @@
-// -*- mode: jsonc -*-
 {
     "height": 27, // Waybar height (to be removed for auto height)
     "spacing": 4, // Gaps between modules (4px)
@@ -8,9 +7,7 @@
         "webcord",
     ],
     "modules-center": [
-        "hyprland/workspaces",
-        "hyprland/window",
-        "sway/window"
+        "hyprland/workspaces"
     ],
     "modules-right": [
         //"mpd",
