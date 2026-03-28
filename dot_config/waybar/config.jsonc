@@ -1,49 +1,38 @@
 {
-    "height": 27, // Waybar height (to be removed for auto height)
-    "spacing": 4, // Gaps between modules (4px)
+    "height": 27,
+    "spacing": 4,
 
     "modules-left": [
         "clock",
-        "vesktop",
+        "vesktop"
     ],
     "modules-center": [
         "hyprland/workspaces"
-        // "hyprland/window"
-        // "sway/window"
     ],
     "modules-right": [
-        //"mpd",
-        //"idle_inhibitor",
         "pulseaudio",
         "network",
         "nm-applet",
-        //"power-profiles-daemon",
         "cpu",
         "memory",
         "temperature",
-        //"backlight",
-        // "keyboard-state",
         "sway/language",
-        //"tray"
         "power"
     ],
+
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-"hyprland/workspaces":{
-      "format": "{name}: {icon}",
-      "format-icons": {
-        "1":" ",
-        "2":" ",
-        "3":" ",
-        "4":" ",
-        "5":" ",
-        "active":" ",
-        "default": " "
-      },
-      "persistent-workspaces":{
-        "*": 5
-      }
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
     },
 
     "sway/scratchpad": {
@@ -53,32 +42,22 @@
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
+
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
         "format-disconnected": "Disconnected ",
         "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
         "unknown-tag": "N/A",
         "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
+        "consume-icons": { "on": " " },
+        "random-icons": { "off": "<span color=\"#f53c3c\"></span> ", "on": " " },
+        "repeat-icons": { "on": " " },
+        "single-icons": { "on": "1 " },
+        "state-icons": { "paused": "", "playing": "" },
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
+
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -86,58 +65,51 @@
             "deactivated": ""
         }
     },
+
     "tray": {
-        // "icon-size": 21,
         "spacing": 10
     },
+
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%d-%m-%Y}"
     },
+
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false
     },
+
     "memory": {
         "format": "{}% "
     },
+
     "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
+
     "backlight": {
-        // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
+
     "power-profiles-daemon": {
-      "format": "{}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
-    },
-    "custom/network": {
-        "format": "{}",
-        "return-type": "json",
-        "interval": 2,
-        "exec": "~/.config/waybar/scripts/waybar-network.py",
-        "on-click": "~/.config/waybar/scripts/waybar-network.py --copy-ip",
-        "on-click-middle": "~/.config/waybar/scripts/waybar-network.py --ping-gw",
-        "on-click-right": "~/.config/waybar/scripts/waybar-network.py --public-ip",
+        "format": "{}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
         "tooltip": true,
-        "markup": "pango"
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
     },
+
+    "network": {},
+
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
@@ -155,6 +127,7 @@
         },
         "on-click": "pavucontrol"
     },
+
     "custom/media": {
         "format": "{icon} {text}",
         "return-type": "json",
@@ -164,19 +137,19 @@
             "default": "🎜"
         },
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
     },
+
     "power": {
-    "format" : "",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
+        "format" : "",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "shutdown",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
     }
 }
