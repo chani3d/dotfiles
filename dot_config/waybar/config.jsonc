@@ -4,12 +4,12 @@
 
     "modules-left": [
         "clock",
-        "webcord",
+        "vesktop",
     ],
     "modules-center": [
-        "hyprland/workspaces",
-        "hyprland/window",
-        "sway/window"
+        "hyprland/workspaces"
+        // "hyprland/window"
+        // "sway/window"
     ],
     "modules-right": [
         //"mpd",
@@ -22,31 +22,21 @@
         "memory",
         "temperature",
         //"backlight",
-        "keyboard-state",
+        // "keyboard-state",
         "sway/language",
         //"tray"
         "power"
     ],
-    "hyprland/window": {
-      // "format": "👉 {}",
-      // "rewrite": {
-      //   "(.*) — Mozilla Firefox": " $1",
-      //   "(.*) - Kitty": ""
-      // },
-        "separate-outputs": true
-    },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
+    "hyprland/workspace":{
+      "active-only": false,
+      "persistent-workspaces":{
+        "*": 5
+      }
+    },
+
     "sway/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
@@ -128,14 +118,14 @@
     },
     "custom/network": {
         "format": "{}",
-  "return-type": "json",
-  "interval": 2,
-  "exec": "~/.config/waybar/scripts/waybar-network.py",
-  "on-click": "~/.config/waybar/scripts/waybar-network.py --copy-ip",
-  "on-click-middle": "~/.config/waybar/scripts/waybar-network.py --ping-gw",
-  "on-click-right": "~/.config/waybar/scripts/waybar-network.py --public-ip",
-  "tooltip": true,
-  "markup": "pango"
+        "return-type": "json",
+        "interval": 2,
+        "exec": "~/.config/waybar/scripts/waybar-network.py",
+        "on-click": "~/.config/waybar/scripts/waybar-network.py --copy-ip",
+        "on-click-middle": "~/.config/waybar/scripts/waybar-network.py --ping-gw",
+        "on-click-right": "~/.config/waybar/scripts/waybar-network.py --public-ip",
+        "tooltip": true,
+        "markup": "pango"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -168,8 +158,8 @@
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
-    "custom/power": {
-        "format" : "",
+    "power": {
+    "format" : "",
 		"tooltip": false,
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
