@@ -24,6 +24,11 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-if command -v distrobox-enter >/dev/null && [ -z "$DISTROBOX_ENTERED" ]; then
-    exec distrobox-enter arch -- zsh
- fi
+# if command -v distrobox-enter >/dev/null && [ -z "$DISTROBOX_ENTERED" ]; then
+#     exec distrobox-enter arch -- zsh
+#  fi
+# This breaks login on bazzite
+#
+if [[ $- == *i* ]] && command -v distrobox-enter >/dev/null && [ -z "$DISTROBOX_ENTERED" ]; then
+  distrobox-enter arch -- zsh
+fi

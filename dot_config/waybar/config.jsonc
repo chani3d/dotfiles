@@ -30,8 +30,17 @@
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    "hyprland/workspace":{
-      "active-only": false,
+"hyprland/workspaces":{
+      "format": "{name}: {icon}",
+      "format-icons": {
+        "1":" ",
+        "2":" ",
+        "3":" ",
+        "4":" ",
+        "5":" ",
+        "active":" ",
+        "default": " "
+      },
       "persistent-workspaces":{
         "*": 5
       }
