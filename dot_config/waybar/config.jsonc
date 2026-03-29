@@ -1,47 +1,94 @@
 {
-    "height": 27,
-    "spacing": 4,
+  "height": 27,
+  "spacing": 4,
 
-    "modules-left": [
-        "clock",
-        "vesktop"
+// Modules
+  "modules-left": [
+    "clock",
+    "vesktop"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "cpu",
+    "memory",
+    "temperature",
+    "power"
     ],
-    "modules-center": [
-        "hyprland/workspaces"
-    ],
-    "modules-right": [
-        "pulseaudio",
-        "network",
-        "nm-applet",
-        "cpu",
-        "memory",
-        "temperature",
-        "sway/language",
-        "power"
-    ],
 
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
+// Left modules configuration
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%d-%m-%Y}"
+  },
 
-    "hyprland/workspaces": {
-        "format": "{name}",
-        "persistent-workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": []
-        }
-    },
+// Middle modules configuration
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
 
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
+// Right modules configuration
+  "pulseaudio": {
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
     },
+    "on-click": "pavucontrol"
+  },
+
+  "network": {
+    "tooltip": true
+  },
+
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": true
+  },
+
+  "memory": {
+    "format": "{}% "
+  },
+
+  "temperature": {
+    "critical-threshold": 80,
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": ["", "", ""],
+    "tooltip": true
+  },
+
+
+
+
+
+
+
+
+
+
+
+
 
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -70,25 +117,13 @@
         "spacing": 10
     },
 
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%d-%m-%Y}"
-    },
+   
 
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
 
-    "memory": {
-        "format": "{}% "
-    },
 
-    "temperature": {
-        "critical-threshold": 80,
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    },
+  
+
+    
 
     "backlight": {
         "format": "{percent}% {icon}",
@@ -105,39 +140,6 @@
             "balanced": "",
             "power-saver": ""
         }
-    },
-
-    "network": {},
-
-    "pulseaudio": {
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-
-    "custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
     },
 
     "power": {

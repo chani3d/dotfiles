@@ -121,24 +121,12 @@
     margin-bottom: 3px;
 }
 
-#custom-apple {
-    padding-left: 8px;
-    padding-right: 8px;
-    margin-right: 5px;
-    margin-top: 4px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    margin-bottom: 3px;
-}
+
 /* Each module that should blink */
 #mode,
 #memory,
 #temperature,
-#battery {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
+
 
 /* Each critical module */
 #memory.critical,
@@ -241,6 +229,7 @@
 #temperature {
     background: @temp;
     border-radius: 8px;
+    margin-right: 10px
 }
 
 #custom-layout {
@@ -265,10 +254,7 @@
 #clock {
     background: @date;
     border-radius: 8px;
-    /* border-top-left-radius: 16px; */
-    margin-left: 5px;
-    /* border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px; */
+    margin-left: 10px;
 }
 
 
@@ -277,19 +263,7 @@
     border-radius: 8px;
 }
 
-
 #tray {
 	background: @tray;
     border-radius: 8px;
 }
-
-#custom-apple {
-    font-size: 17px;
-    background: @apple;
-    border-radius: 8px;
-    border-top-left-radius: 16px;
-    margin-left: 5px;
-    padding-left: 14px;
-    padding-right: 14px;
-}
-
