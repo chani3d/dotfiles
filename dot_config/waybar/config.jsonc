@@ -4,7 +4,9 @@
 
 // Modules
   "modules-left": [
+    "custom/logo",
     "clock",
+    "clock#date",
     "vesktop"
   ],
   "modules-center": [
@@ -12,6 +14,7 @@
   ],
   "modules-right": [
     "pulseaudio",
+    "bluetooth",
     "network",
     "cpu",
     "memory",
@@ -20,9 +23,18 @@
     ],
 
 // Left modules configuration
+  "custom/logo":{
+    "format": "",
+    "on-click": "wofi --show drun"
+  },
+
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%d-%m-%Y}"
+  },
+
+  "clock#date": {
+    "format": "{:%A, %d %B %Y}"
   },
 
 // Middle modules configuration
@@ -63,11 +75,12 @@
 
   "cpu": {
     "format": "{usage}% ",
-    "tooltip": true
+    "tooltip": true,
+    "on-click": "foot -e btop"
   },
 
   "memory": {
-    "format": "{}% "
+    "format": "{}% "
   },
 
   "temperature": {
@@ -86,7 +99,15 @@
 
 
 
-
+"bluetooth": {
+	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+	"format": " {status}",
+	"format-disabled": "", // an empty format will hide the module
+	"format-connected": " {num_connections}",
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+},
 
 
 
@@ -113,9 +134,6 @@
         }
     },
 
-    "tray": {
-        "spacing": 10
-    },
 
    
 

@@ -57,6 +57,7 @@
 @define-color workspaces #1e1e2e;
 @define-color workspacesfocused #1e1e2e;
 @define-color tray @workspacesfocused;
+@define-color custom-logo #1e1e2e;
 @define-color sound #1e1e2e;
 @define-color network #1e1e2e;
 @define-color memory #1e1e2e;
@@ -67,7 +68,7 @@
 @define-color date #1e1e2e;
 @define-color time #3A4253;
 @define-color backlight #1e1e2e;
-@define-color apple #1e1e2e;
+@define-color bluetooth #1e1e2e;
 
 
 
@@ -91,6 +92,7 @@
 }
 
 /* Each module */
+#custom-logo,
 #battery,
 #cpu,
 #custom-layout,
@@ -100,7 +102,7 @@
 #pulseaudio,
 #temperature,
 #custom-alsa,
-#tray,
+#bluetooth,
 #backlight {
     padding-left: 10px;
     padding-right: 10px;
@@ -211,6 +213,12 @@
 
 }
 
+#custom-logo {
+    background: @custom-logo;
+    border-radius: 8px;
+    margin-left: 10px;
+}
+
 #network {
     background: @network;
     border-radius: 8px;
@@ -254,7 +262,6 @@
 #clock {
     background: @date;
     border-radius: 8px;
-    margin-left: 10px;
 }
 
 
@@ -265,5 +272,9 @@
 
 #tray {
 	background: @tray;
+    border-radius: 8px;
+}
+#bluetooth {
+	background: @bluetooth;
     border-radius: 8px;
 }
