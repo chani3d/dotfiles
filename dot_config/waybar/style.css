@@ -172,33 +172,91 @@
 
 /* Workspaces stuff */
 
+
+#workspaces {
+  background-color: @network;
+  margin-top: 4px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 3px;
+  margin-right: 1px;
+  padding: 5px 3px;
+  border-radius: 8px;
+  color: @bg;
+}
+
+#workspaces button {
+  padding: 0px 6px;
+  margin: 0px 3px;
+  border-radius: 8px;
+  background-color: @network;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+  background-color: @dark;
+  color: @light;
+  min-width: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+  background-color: @purple;
+  color: @bg;
+  border-radius: 8px;
+  min-width: 40px;
+  background-size: 400% 400%;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+  color: @bg;
+  border-radius: 8px;
+  min-width: 40px;
+  background-size: 400% 400%;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
 /* #workspaces {
     border-radius: 8px;
 } */
 
-
-#workspaces button {
-	font-weight: bold;
-	padding-left: 5px;
-	padding-right: 5px;
-	color: @light;
-	background: @workspaces;
-    border-radius: 8px;
-    margin-top: 4px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-bottom: 3px;
-    margin-right: 1px;
-
-}
-
-#workspaces button.active {
-    color: #f9e2af;
-}
-
-#workspaces button.urgent {
-    color: #f38ba8;
-}
+/* #workspaces { */
+/*   padding: 5px 3px; */
+/*   border-radius: 18px; */
+/*   border: 1px solid @dark; */
+/* } */
+/**/
+/* #workspaces button { */
+/* 	font-weight: bold; */
+/* 	padding-left: 5px; */
+/* 	padding-right: 5px; */
+/* 	color: @light; */
+/*   transition: all 0.3s ease-in-out; */
+/* 	background: @workspaces; */
+/*     border-radius: 8px; */
+/*     margin-top: 4px; */
+/*     padding-top: 5px; */
+/*     padding-bottom: 5px; */
+/*     margin-bottom: 3px; */
+/*     margin-right: 1px; */
+/**/
+/* } */
+/**/
+/* #workspaces button.active { */
+/*   color: #f9e2af; */
+/*   transition: all 0.3s ease-in-out; */
+/* } */
+/**/
+/* #workspaces button.urgent { */
+/*     color: #f38ba8; */
+/* } */
+/**/
+/* #workspces button:hover { */
+/*   background-size: 400% 400%; */
+/* } */
 
 #window {
 	margin-right: 40px;

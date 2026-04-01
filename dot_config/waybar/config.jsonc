@@ -7,7 +7,7 @@
     "custom/logo",
     "clock",
     "clock#date",
-    "vesktop"
+    "disk"
   ],
   "modules-center": [
     "hyprland/workspaces"
@@ -49,6 +49,19 @@
     }
   },
 
+  "disk": {
+    "interval": 30,
+    "format": "Only {percentage_free}% remaining on {path}",
+    "path": "/dev/nvme01p7"
+  },
+
+  "disk": {
+    "interval": 30,
+    "path": "/",
+    "format": "{specific_free:0.2f} GB out of {specific_total:0.2f} GB available. Alternatively {free} out of {total} available",
+    "unit": "GB"
+  },
+
 // Right modules configuration
   "pulseaudio": {
     "format": "{volume}% {icon} {format_source}",
@@ -70,7 +83,10 @@
   },
 
   "network": {
-    "tooltip": true
+    "tooltip": true,
+    "format-ethernet": "{gwaddr} 󰈁",
+    "format-disconnected": "Disconnected 󰈂",
+    "tooltip-format-ethernet": "{ifname} via {ipaddr}"
   },
 
   "cpu": {
