@@ -49,18 +49,12 @@
     }
   },
 
-  "disk": {
-    "interval": 30,
-    "format": "Only {percentage_free}% remaining on {path}",
-    "path": "/dev/nvme01p7"
-  },
-
-  "disk": {
-    "interval": 30,
-    "path": "/",
-    "format": "{specific_free:0.2f} GB out of {specific_total:0.2f} GB available. Alternatively {free} out of {total} available",
-    "unit": "GB"
-  },
+ "disk": {
+  "interval": 30,
+  "path": "/",
+  "unit": "GB",
+  "format": "{specific_free:0.2f} GB out of {specific_total:0.2f} GB available"
+},
 
 // Right modules configuration
   "pulseaudio": {

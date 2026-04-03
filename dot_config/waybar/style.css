@@ -275,11 +275,13 @@
     background: @custom-logo;
     border-radius: 8px;
     margin-left: 10px;
+    color: #1793D1;
 }
 
 #network {
     background: @network;
     border-radius: 8px;
+    color: #D16BE6;
 }
 
 #memory {
@@ -326,6 +328,7 @@
 #pulseaudio {
     background: @sound;
     border-radius: 8px;
+    color: #FFB347;
 }
 
 #tray {
@@ -334,5 +337,6 @@
 }
 #bluetooth {
 	background: @bluetooth;
-    border-radius: 8px;
+  border-radius: 8px;
+  color: #0082FC;
 }
